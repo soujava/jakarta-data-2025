@@ -28,7 +28,6 @@ public class App {
 
     public static void main(String[] args) {
         var faker = new Faker();
-        LOGGER.info("Starting the application");
         try (SeContainer container = SeContainerInitializer.newInstance().initialize()) {
             var template = container.select(DocumentTemplate.class).get();
             var electronicsCategory = new Category("Electronics", "All electronics");
