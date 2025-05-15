@@ -99,6 +99,12 @@
             <artifactId>jnosql-mongodb</artifactId>
             <version>${jnosql.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.eclipse.jnosql.metamodel</groupId>
+            <artifactId>mapping-metamodel-processor</artifactId>
+            <version>${jnosql.version}</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
     <build>
         <pluginManagement>
