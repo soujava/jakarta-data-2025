@@ -15,5 +15,8 @@ image::https://d1q6f0aelx0por.cloudfront.net/product-logos/library-docker-logo.p
 
 [source, bash]
 ----
-docker run -d --name oracle-instance -p 8080:8080 ghcr.io/oracle/nosql:latest-ce
+docker run -d --name kvlite --hostname=kvlite --env KV_PROXY_PORT=8080 -p 8080:8080 ghcr.io/oracle/nosql:latest-ce
 ----
+
+docker run --rm -ti --link kvlite:store ghcr.io/oracle/nosql:latest-ce \
+java -jar lib/kvstore.jar ping -host store -port 5000
