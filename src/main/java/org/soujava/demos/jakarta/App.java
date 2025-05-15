@@ -29,24 +29,6 @@ public class App {
     public static void main(String[] args) {
         var faker = new Faker();
         try (SeContainer container = SeContainerInitializer.newInstance().initialize()) {
-            var template = container.select(DocumentTemplate.class).get();
-            var electronicsCategory = new Category("Electronics", "All electronics");
-            var computerCategory = new Category("Computers", "All computers");
-            var tags = List.of("smartphone", "tablet", "laptop");
-            var manufacturer = new Manufacturer("Apple", "One Infinite Loop Cupertino, CA 95014", "+1-408-996-1010");
-            Product macBookPro = Product.builder().categories(Set.of(electronicsCategory, computerCategory))
-                    .manufacturer(manufacturer)
-                    .name("MacBook Pro")
-                    .tags(tags)
-                    .build();
-
-            Product product = template.insert(macBookPro);
-
-            LOGGER.info("Product saved: " + product);
-            template.select(Product.class).where("id")
-                    .eq(product.getId())
-                    .result().forEach(p -> LOGGER.info("Product found: " + p));
-
 
         }
     }
