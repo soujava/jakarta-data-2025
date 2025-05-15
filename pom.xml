@@ -12,14 +12,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.soujava.demos.mongodb</groupId>
-    <artifactId>embedded</artifactId>
+    <groupId>org.soujava.demos.jakarta</groupId>
+    <artifactId>data</artifactId>
     <version>1.0.0</version>
-    <name>JNoSQL Demo using Java SE MongoDB exploring Embedded</name>
+    <name>JNoSQL Demo using Java SE with Jakarta Data</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jnosql.version>1.1.4</jnosql.version>
+        <jnosql.version>1.1.7</jnosql.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <maven.compile.version>3.5.1</maven.compile.version>
