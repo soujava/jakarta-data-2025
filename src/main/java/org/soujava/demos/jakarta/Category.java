@@ -1,4 +1,4 @@
-package org.soujava.demos.mongodb.document;
+package org.soujava.demos.jakarta;
 
 import jakarta.nosql.Column;
 import jakarta.nosql.Embeddable;

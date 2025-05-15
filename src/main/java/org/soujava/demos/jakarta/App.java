@@ -9,7 +9,7 @@
  * You may elect to redistribute this code under either of these licenses.
  */
 
-package org.soujava.demos.mongodb.document;
+package org.soujava.demos.jakarta;
 
 
 import jakarta.enterprise.inject.se.SeContainer;
