@@ -1,2 +1,2 @@
-# jakarta-data-2025
-This repositoryc ontains the Jakarta Data structure to run some code
+= jakarta-data-2025
+This repository contains the Jakarta Data structure to run some code
