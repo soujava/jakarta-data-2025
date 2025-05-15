@@ -15,10 +15,7 @@ package org.soujava.demos.jakarta;
 import jakarta.enterprise.inject.se.SeContainer;
 import jakarta.enterprise.inject.se.SeContainerInitializer;
 import net.datafaker.Faker;
-import org.eclipse.jnosql.mapping.document.DocumentTemplate;
 
-import java.util.List;
-import java.util.Set;
 import java.util.logging.Logger;
 
 
@@ -29,6 +26,10 @@ public class App {
     public static void main(String[] args) {
         var faker = new Faker();
         try (SeContainer container = SeContainerInitializer.newInstance().initialize()) {
+            var repository = container.select(Garage.class).get();
+
+            var vehicle = Vehicle.of(faker);
+            repository.save(vehicle);
 
         }
     }
