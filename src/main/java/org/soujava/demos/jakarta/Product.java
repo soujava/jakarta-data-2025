@@ -1,10 +1,8 @@
 package org.soujava.demos.jakarta;
 
 import jakarta.nosql.Column;
-import jakarta.nosql.Convert;
 import jakarta.nosql.Entity;
 import jakarta.nosql.Id;
-import org.eclipse.jnosql.databases.mongodb.mapping.ObjectIdConverter;
 
 import java.util.List;
 import java.util.Objects;
@@ -14,7 +12,6 @@ import java.util.Set;
 public class Product {
 
     @Id
-    @Convert(ObjectIdConverter.class)
     private String id;
 
     @Column
