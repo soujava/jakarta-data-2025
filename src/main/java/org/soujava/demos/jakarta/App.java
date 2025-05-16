@@ -31,7 +31,8 @@ public class App {
             var vehicle = Vehicle.of(faker);
             repository.save(vehicle);
 
-            System.out.println("Find by automatic: " + repository.findBy(Transmission.AUTOMATIC));
+            System.out.println("Find by automatic: "
+                    + repository.query(Transmission.AUTOMATIC).toList());
 
         }
     }
