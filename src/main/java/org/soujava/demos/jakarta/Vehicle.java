@@ -19,7 +19,7 @@ public class Vehicle {
     private String type;
 
     @Column
-    private String transmission;
+    private Transmission transmission;
 
     public static Vehicle of(Faker faker) {
         var vehicle = faker.vehicle();
@@ -27,7 +27,7 @@ public class Vehicle {
         entity.vin = vehicle.vin();
         entity.model = vehicle.model();
         entity.type = vehicle.carType();
-        entity.transmission = vehicle.transmission();
+        entity.transmission = Transmission.of(vehicle.transmission());
         return entity;
     }
 
