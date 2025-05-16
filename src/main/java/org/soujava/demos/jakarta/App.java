@@ -32,7 +32,7 @@ public class App {
             repository.save(vehicle);
 
             System.out.println("Find by automatic: "
-                    + repository.query(Transmission.AUTOMATIC).toList());
+                    + repository.findBy(Transmission.AUTOMATIC, _Vehicle.vin.asc()));
 
         }
     }

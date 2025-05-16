@@ -1,5 +1,7 @@
 package org.soujava.demos.jakarta;
 
+import jakarta.data.Order;
+import jakarta.data.Sort;
 import jakarta.data.repository.BasicRepository;
 import jakarta.data.repository.By;
 import jakarta.data.repository.Find;
@@ -17,7 +19,7 @@ public interface Garage extends BasicRepository<Vehicle, String> {
     List<Vehicle> findByTransmission(Transmission transmission);
 
     @Find
-    List<Vehicle> findBy(@By("transmission") Transmission transmission);
+    List<Vehicle> findBy(@By("transmission") Transmission transmission, Sort<Vehicle> order);
 
     @Query("from Vehicle where transmission = :transmission order by type asc")
     Stream<Vehicle> query(@Param("transmission") Transmission transmission);
