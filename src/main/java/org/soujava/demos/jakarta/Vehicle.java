@@ -12,14 +12,29 @@ public class Vehicle {
 
     @Id
     private String vin;
-    @Column
+   @Column
     private String model;
-
     @Column
     private String type;
-
     @Column
     private Transmission transmission;
+
+
+    public String getVin() {
+        return vin;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public Transmission getTransmission() {
+        return transmission;
+    }
 
     public static Vehicle of(Faker faker) {
         var vehicle = faker.vehicle();

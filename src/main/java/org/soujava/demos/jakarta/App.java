@@ -12,8 +12,7 @@
 package org.soujava.demos.jakarta;
 
 
-import jakarta.data.Order;
-import jakarta.data.page.PageRequest;
+
 import jakarta.enterprise.inject.se.SeContainer;
 import jakarta.enterprise.inject.se.SeContainerInitializer;
 import net.datafaker.Faker;
@@ -21,11 +20,7 @@ import net.datafaker.Faker;
 import java.util.logging.Logger;
 
 
-//define vehicle entity
-//basic operation with repository
-//find queries
-//bult in vs classic repositories
-//pagination (two types)
+
 
 public class App {
 
@@ -34,20 +29,18 @@ public class App {
     public static void main(String[] args) {
         var faker = new Faker();
         try (SeContainer container = SeContainerInitializer.newInstance().initialize()) {
-            var repository = container.select(Garage.class).get();
+            var garage = container.select(Garage.class).get();
 
             for (int index = 0; index < 10; index++) {
-                var vehicle = Vehicle.of(faker);
-                repository.parking(vehicle);
+                var vehicle = garage.park(Vehicle.of(faker));
             }
 
-            PageRequest pageRequest = PageRequest.ofSize(2);
-            var page = repository.findAll(pageRequest);
-            LOGGER.info(() -> "Page: " + page.content());
-            PageRequest page2 = page.nextPageRequest();
-            var page2Result = repository.findAll(page2);
-            LOGGER.info(() -> "Page2: " + page2Result.content());
+           var vehicles = garage.findByTransmission(Transmission.AUTOMATIC,
+                   _Vehicle.model.asc());
 
+            System.out.println("The vehicles with" +
+                    " automatic transmission are: "
+             + vehicles);
         }
     }
 
