@@ -13,6 +13,8 @@ package org.soujava.demos.jakarta;
 
 
 
+import jakarta.data.page.Page;
+import jakarta.data.page.PageRequest;
 import jakarta.enterprise.inject.se.SeContainer;
 import jakarta.enterprise.inject.se.SeContainerInitializer;
 import net.datafaker.Faker;
@@ -41,6 +43,10 @@ public class App {
             System.out.println("The vehicles with" +
                     " automatic transmission are: "
              + vehicles);
+            PageRequest pageRequest = PageRequest.ofSize(10);
+            garage.findAll(pageRequest,_Vehicle.model.asc())
+                    .forEach(System.out::println);
+
         }
     }
 
