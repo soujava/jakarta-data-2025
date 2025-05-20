@@ -32,15 +32,21 @@ public class App {
             var garage = container.select(Garage.class).get();
 
             for (int index = 0; index < 10; index++) {
-                var vehicle = garage.park(Vehicle.of(faker));
+                garage.park(Vehicle.of(faker));
             }
 
            var vehicles = garage.findByTransmission(Transmission.AUTOMATIC,
                    _Vehicle.model.asc());
 
-            System.out.println("The vehicles with" +
-                    " automatic transmission are: "
-             + vehicles);
+            System.out.println("Using query by Find annotation: " + vehicles);
+
+            System.out.println("Using query by Query annotation: " +  garage.query(Transmission.AUTOMATIC)
+                    .toList());
+
+            System.out.println("Using query by method by query: " +  garage.findByTransmission(Transmission.AUTOMATIC
+                    , _Vehicle.model.asc()));
+
+
             PageRequest pageRequest = PageRequest.ofSize(10);
             garage.findAll(pageRequest,_Vehicle.model.asc())
                     .forEach(System.out::println);
