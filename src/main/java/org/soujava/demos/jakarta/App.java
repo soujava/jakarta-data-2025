@@ -12,8 +12,6 @@
 package org.soujava.demos.jakarta;
 
 
-
-import jakarta.data.page.Page;
 import jakarta.data.page.PageRequest;
 import jakarta.enterprise.inject.se.SeContainer;
 import jakarta.enterprise.inject.se.SeContainerInitializer;
