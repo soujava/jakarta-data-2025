@@ -20,9 +20,9 @@ import net.datafaker.Faker;
 import java.util.logging.Logger;
 
 
-public class QueryApp {
+public class CursorApp {
 
-    private static final Logger LOGGER = Logger.getLogger(QueryApp.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(CursorApp.class.getName());
 
     public static void main(String[] args) {
         var faker = new Faker();
@@ -42,6 +42,6 @@ public class QueryApp {
         }
     }
 
-    private QueryApp() {
+    private CursorApp() {
     }
 }
