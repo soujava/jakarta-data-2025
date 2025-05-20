@@ -22,8 +22,6 @@ import java.util.logging.Logger;
 
 public class CursorApp {
 
-    private static final Logger LOGGER = Logger.getLogger(CursorApp.class.getName());
-
     public static void main(String[] args) {
         var faker = new Faker();
         try (SeContainer container = SeContainerInitializer.newInstance().initialize()) {
