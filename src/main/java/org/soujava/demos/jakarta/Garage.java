@@ -31,8 +31,8 @@ public interface Garage  {
     Stream<Vehicle> query(@Param("transmission") Transmission transmission);
 
     @Find
-    @OrderBy(_Vehicle.MODEL)
-    CursoredPage<Vehicle> cursor(PageRequest pageRequest);
+    @OrderBy(_Vehicle.TYPE)
+    CursoredPage<Vehicle> cursor(@By("transmission") Transmission transmission, PageRequest pageRequest);
 
 
     @Find
