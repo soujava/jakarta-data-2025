@@ -17,12 +17,9 @@ import jakarta.enterprise.inject.se.SeContainer;
 import jakarta.enterprise.inject.se.SeContainerInitializer;
 import net.datafaker.Faker;
 
-import java.util.logging.Logger;
-
 
 public class OffSetApp {
 
-    private static final Logger LOGGER = Logger.getLogger(OffSetApp.class.getName());
 
     public static void main(String[] args) {
         var faker = new Faker();

@@ -17,14 +17,11 @@ import jakarta.enterprise.inject.se.SeContainer;
 import jakarta.enterprise.inject.se.SeContainerInitializer;
 import net.datafaker.Faker;
 
-import java.util.logging.Logger;
-
 
 
 
 public class App {
 
-    private static final Logger LOGGER = Logger.getLogger(App.class.getName());
 
     public static void main(String[] args) {
         var faker = new Faker();
