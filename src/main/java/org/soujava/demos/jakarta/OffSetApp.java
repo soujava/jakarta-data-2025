@@ -20,9 +20,9 @@ import net.datafaker.Faker;
 import java.util.logging.Logger;
 
 
-public class CursorApp {
+public class OffSetApp {
 
-    private static final Logger LOGGER = Logger.getLogger(CursorApp.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(OffSetApp.class.getName());
 
     public static void main(String[] args) {
         var faker = new Faker();
@@ -33,15 +33,15 @@ public class CursorApp {
                 garage.park(Vehicle.of(faker));
             }
 
-            var cursor = garage.cursor(Transmission.AUTOMATIC, PageRequest.ofSize(3));
+            var page = garage.offset(Transmission.AUTOMATIC, PageRequest.ofSize(3));
 
-            System.out.println("the cursor page content: " + cursor.content());
-            var cursor2 = garage.cursor(Transmission.AUTOMATIC, cursor.nextPageRequest());
-            System.out.println("the cursor2 page content: " + cursor2.content());
+            System.out.println("the offset page content: " + page.content());
+            var page2 = garage.offset(Transmission.AUTOMATIC, page.nextPageRequest());
+            System.out.println("the offset2 page content: " + page2.content());
 
         }
     }
 
-    private CursorApp() {
+    private OffSetApp() {
     }
 }

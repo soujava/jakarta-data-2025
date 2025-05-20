@@ -37,7 +37,7 @@ public interface Garage  {
 
     @Find
     @OrderBy(_Vehicle.MODEL)
-    Page<Vehicle> offset(PageRequest pageRequest);
+    Page<Vehicle> offset(@By("transmission") Transmission transmission, PageRequest pageRequest);
 
     @Find
     CursoredPage<Vehicle> findAll(PageRequest pageRequest, Sort<Vehicle> sort);
